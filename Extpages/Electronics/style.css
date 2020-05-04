@@ -1,0 +1,483 @@
+/*
+--- Basic Styling
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background: #f4f4f4;
+  justify-content: center;
+  align-items: center;
+}
+
+/*
+--- Checkout Panel
+*/
+.checkout-panel {
+  display: flex;
+  flex-direction: column;
+  width: 940px;
+  height: 766px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .2);
+}
+
+/* Panel Body */
+.panel-body {
+  padding: 45px 80px 0;
+  flex: 1;
+}
+
+.title {
+  font-weight: 700;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  color: #2e2e2e;
+}
+.titlel {
+  padding-top:20px;
+}
+
+/* Progress Bar */
+.progress-bar {
+  display: flex;
+  margin-bottom: 50px;
+  justify-content: space-between;
+}
+
+.step {
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 25px;
+  height: 25px;
+  margin-bottom: 30px;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  background-color: #efefef;
+}
+
+.step:after {
+  position: absolute;
+  z-index: -1;
+  top: 5px;
+  left: 22px;
+  width: 225px;
+  height: 6px;
+  content: '';
+  background-color: #efefef;
+}
+
+.step:before {
+  color: #2e2e2e;
+  position: absolute;
+  top: 40px;
+}
+
+.step:last-child:after {
+  content: none;
+}
+
+.step.active {
+  background-color: #f62f5e;
+}
+.step.active:after {
+  background-color: #f62f5e;
+}
+.step.active:before {
+  color: #f62f5e;
+}
+
+.step.active + .step {
+  background-color: #f62f5e;
+}
+.step.active + .step:before {
+  color: #f62f5e;
+}
+
+.step:nth-child(1):before {
+  content: 'Delivery';
+}
+.step:nth-child(2):before {
+  right: -40px;
+  content: 'Confirmation';
+}
+.step:nth-child(3):before {
+  right: -30px;
+  content: 'Payment';
+}
+.step:nth-child(4):before {
+  right: 0;
+  content: 'Finish';
+}
+
+/* Payment Method */
+.payment-method {
+  display: flex;
+  margin-bottom: 60px;
+  justify-content: space-between;
+}
+
+.method {
+  display: flex;
+  flex-direction: column;
+  width: 382px;
+  height: 122px;
+  padding-top: 20px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  background-color: rgb(249, 249, 249);
+  justify-content: center;
+  align-items: center;
+}
+
+.blue-border {
+  border: 1px solid rgb(110, 178, 251);
+}
+
+.card-logos {
+  display: flex;
+  width: 150px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.radio-input {
+  margin-top: 20px;
+}
+
+input[type='radio'] {
+  display: inline-block;
+}
+
+
+/* Input Fields */
+.input-fields {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-fields label {
+  display: block;
+  margin-bottom: 10px;
+  color: #b4b4b4;
+}
+
+.warning {
+  border-color: #f62f5e !important;
+}
+
+.info {
+  font-size: 12px;
+  font-weight: 300;
+  display: block;
+  margin-top: 50px;
+  opacity: .5;
+  color: #2e2e2e;
+}
+
+div[class*='column'] {
+  width: 382px;
+}
+
+input[type='text'],
+input[type='password'] {
+  font-size: 16px;
+  width: 100%;
+  height: 50px;
+  padding-right: 40px;
+  padding-left: 16px;
+  color: rgba(46, 46, 46, .8);
+  border: 1px solid rgb(225, 225, 225);
+  border-radius: 4px;
+  outline: none;
+}
+
+input[type='text']:focus,
+input[type='password']:focus {
+  border-color: rgb(119, 219, 119);
+}
+
+#date { background: url(img/icons_calendar_black.png) no-repeat 90%; }
+#cardholder { background: url(img/icons_person_black.png) no-repeat 95%; }
+#cardnumber { background: url(img/icons_card_black.png) no-repeat 95%; }
+#verification { background: url(img/icons_lock_black.png) no-repeat 90%; }
+
+.small-inputs {
+  display: flex;
+  margin-top: 20px;
+  justify-content: space-between;
+}
+
+.small-inputs div {
+  width: 182px;
+}
+
+/* Panel Footer */
+.panel-footer {
+  display: flex;
+  width: 100%;
+  height: 96px;
+  padding: 0 100px;
+  background-color: rgb(239, 239, 239);
+  justify-content: space-between;
+  align-items: center;
+   position:relative;
+  top:25px;
+}
+
+.panel-footerr {
+  display: flex;
+  width: 100%;
+  height: 96px;
+  padding: 0 100px;
+  background-color: rgb(239, 239, 239);
+  justify-content: space-between;
+  align-items: center;
+  position:relative;
+  top:-365px;
+}
+
+/* Buttons */
+.btn {
+  font-size: 16px;
+  width: 163px;
+  height: 48px;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 23px;
+}
+
+.back-btn {
+  color: #f62f5e;
+  background: #fff;
+}
+
+.next-btn {
+  color: #fff;
+  background: #f62f5e;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+.emall {
+  border-radius:30px; 
+  border: 2px solid #f62f5e;
+  padding: 20px;
+  width: 500px;
+  height: 10px;
+}
+.button {
+  border-radius:30px;
+  background-color:#f62f5e;
+  border: none;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+}
+.word {
+  font-size:15px;
+  color:grey;
+}
+.wordd {
+  position:relative;
+  left:500px;
+  top:-35px;
+}
+.worddd {
+  position:relative;
+  left:200px;
+  top:-180px;
+  font-weight:bold;
+}
+.price{
+  position:relative;
+  left:450px;
+  top:-215px;
+  font-weight:bold;
+}
+.sold {
+  position:relative;
+  left:200px;
+  top:-215px;
+}
+.dropdown {
+  position:relative;
+  left:200px;
+  top:-205px;
+}
+.Remove {
+  position:relative;
+  left:200px;
+  top:-175px;
+}
+.move {
+  position:relative;
+  left:350px;
+  top:-208px;
+  color:blue;
+}
+
+.photo {
+  position:relative;
+  max-width:25%;
+}
+.tab {
+  position:relative;
+  border-style:solid;
+  border-width:2px;
+  border-color:rgb(239, 239, 239);
+  top:-10px;
+  width:70%;
+  height:30%;
+}
+.tab2 {
+  position:relative;
+  bottom:-110px;
+}
+.cou {
+  position:relative;
+  top:-518px;
+  left:560px;
+}
+.button2 {
+  position:relative;
+  top:-558px;
+  left:760px;
+}
+.price2 {
+  position:relative;
+  top:-540px;
+  left:560px;
+}
+.tmrp {
+  position:relative;
+  top:-540px;
+  left:560px;
+} 
+.mrp {
+  position:relative;
+  top:-580px;
+  left:760px;
+}
+.disc {
+  position:relative;
+  top:-570px;
+  left:560px;
+}
+.price3 {
+  position:relative;
+  top:-605px;
+  left:760px;
+}
+.price4 {
+   position:relative;
+  top:-620px;
+  left:760px;
+}
+.price5 {
+   position:relative;
+  top:-645px;
+  left:760px;
+}
+.price6 {
+   position:relative;
+  top:-665px;
+  left:760px;
+}
+.price7 {
+  position:relative;
+  top:-684px;
+  left:760px;
+  font-weight:bold;
+}
+.cou2 {
+  position:relative;
+  top:-610px;
+  left:560px;
+}
+.tax {
+position:relative;
+top:-586px;
+left:560px;  
+}
+.Dev { 
+position:relative;
+top:-630px;
+left:560px;
+}
+.total {
+  position:relative;
+  top:-650px;
+  left:560px;
+  font-weight:bold;
+}
+/* Dropdown Button */
+.dropbtn {
+  background-color: rgb(239, 239, 239);
+  color:black;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color:rgb(239, 239, 239);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #f62f5e;}
+
+.fas {
+  font-size:50px;
+  position:relative;
+  left:270px;
+  top:-50px;
+}
